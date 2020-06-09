@@ -70,7 +70,7 @@ def throwException(e):
 # };
 
 
-def catchExeception(c):
+def catchException(c):
     def task(t):
         def ap():
             try:
