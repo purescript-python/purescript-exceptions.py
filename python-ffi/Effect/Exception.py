@@ -77,7 +77,7 @@ def catchException(c):
                 return t()
             # TODO: is this equvilant?
             except Exception as e:
-                return c(e)
+                return c(e)()
 
         return ap
 
