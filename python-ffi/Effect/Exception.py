@@ -2,13 +2,18 @@ import traceback
 
 
 def showErrorImpl(err):
-    # TODO: make sure implemeted as JS
-    result = traceback.extract_stack(err)
-    if result is None:
+    try:
+        # TODO: make sure implemeted as JS
+        result = traceback.extract_stack(err)
+        if result is None:
+            return str(err)
+        else:
+            return result
+    except Exception as e:
+        # TODO: sometimes we don't get a viable `err`,
+        # and that shouldn't penalize us
+        # should we log this somehow?
         return str(err)
-    else:
-        return result
-
 
 def error(msg):
     return Exception(msg)
